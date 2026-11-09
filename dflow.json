@@ -1,0 +1,17 @@
+{
+  "name": "labfile",
+  "summary": "Lab repository that already has dflow.json",
+  "applications": [
+    {
+      "name": "labfile",
+      "image": "hashicorp/http-echo:1.0.0",
+      "port": 5678,
+      "replicas": 1,
+      "route": { "public": true },
+      "env": { "FROM_FILE": "dflow-json" }
+    }
+  ],
+  "services": [
+    { "name": "labfile-db", "provider": "postgresql", "database": "labfile", "storage": "1Gi" }
+  ]
+}
