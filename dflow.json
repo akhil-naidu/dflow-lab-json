@@ -8,10 +8,16 @@
       "port": 5678,
       "replicas": 1,
       "route": {
-        "public": false
+        "public": true
       },
       "env": {
         "FROM_FILE": "dflow-json"
+      },
+      "secrets": {
+        "DATABASE_URL": {
+          "service": "labfile-db",
+          "field": "url"
+        }
       }
     }
   ],
