@@ -7,11 +7,20 @@
       "image": "hashicorp/http-echo:1.0.0",
       "port": 5678,
       "replicas": 1,
-      "route": { "public": true },
-      "env": { "FROM_FILE": "dflow-json" }
+      "route": {
+        "public": false
+      },
+      "env": {
+        "FROM_FILE": "dflow-json"
+      }
     }
   ],
   "services": [
-    { "name": "labfile-db", "provider": "postgresql", "database": "labfile", "storage": "1Gi" }
+    {
+      "name": "labfile-db",
+      "provider": "postgresql",
+      "database": "labfile",
+      "storage": "1Gi"
+    }
   ]
 }
